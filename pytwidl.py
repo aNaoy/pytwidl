@@ -1,11 +1,27 @@
 #!/usr/env python
 
 """
-Author: Yoan Agostini <yoan.agostiniATgmailDOTcom>
+Copyright Yoan Agostini <yoan.agostiniATgmailDOTcom>
+
+PyTwiDL is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+PyTwiDL is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with PyTwiDL.  If not, see <http://www.gnu.org/licenses/>.
+
+*******************************************************************************
 Little and dirty script to download Twitch.tv videos.
 
 More informations here:
 http://support.twitch.tv/discussion/1839/how-to-download-a-video-from-twitch-tv
+*******************************************************************************
 """
 
 import urllib2
@@ -14,19 +30,15 @@ from xml.dom.minidom import parse
 import os
 
 def main():
-	if os.name == 'posix':
-		sep = '/'
-	else:
-		sep = '\\'
 
 	#Arg parsing
 	parser = argparse.ArgumentParser(description='Download Twitch.tv videos.')
 	parser.add_argument('-c', '--clip-id', required=True, help='The ClipID of the video: http://twitch.tv/username/b/CLIPIDHERE')
-	parser.add_argument('-o', '--output-file', default=os.getcwd() + sep +'pytwidl.flv')
+	parser.add_argument('-o', '--output-file', default=os.getcwd() + os.sep + 'pytwidl.flv')
 	args = parser.parse_args()
 
 	#Getting the video's URI
-	uri = 'http://api.justin.tv/api/clip/show/'+ args.clip_id +'.xml'
+	uri = 'http://api.justin.tv/api/clip/show/' + args.clip_id + '.xml'
 	stream = urllib2.urlopen(uri)
 	dom = parse(stream)
 	name = dom.getElementsByTagName('video_file_url')
