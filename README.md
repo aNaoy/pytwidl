@@ -18,7 +18,7 @@ along with PyTwiDL.  If not, see <http://www.gnu.org/licenses/>.
 PyTwiDL is another script to download videos from Twitch.tv easily.
 
 <h2>2. Install and usage</h2>
-PyTwiDL uses built-in Python 2.7 modules and do not requires any other stuff.
+PyTwiDL uses built-in Python 2.7 modules and does not require any other stuff.
 It is multi-platform, so you should be able to run it anywhere.
 
 To use it, simply specify the video's Clip ID with '-c' argument, you can find it in the video's URI:
