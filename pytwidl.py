@@ -1,7 +1,7 @@
-#!/usr/env python
+#!/usr/bin/env python
 
 """
-Copyright Yoan Agostini <yoan.agostiniATgmailDOTcom>
+Copyright Yoan Agostini <yoanDOTagostiniATgmailDOTcom>
 
 PyTwiDL is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
